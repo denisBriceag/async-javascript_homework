@@ -135,4 +135,4 @@ async function handleGetPostsWithXmlHttpRequest() {
   console.log(parsedResult);
 }
 
-console.log(handleGetPostsWithXmlHttpRequest());
+handleGetPostsWithXmlHttpRequest();
