@@ -112,15 +112,11 @@ function getPosts(method, url) {
     xhr.open(method, url);
     xhr.responseType = "json";
     xhr.onload = () => {
-      if (xhr.status > 200 && xhr.status < 300) {
+      if (xhr.status === 200) {
         resolve(xhr.response);
       } else {
-        reject(new Error("Something went wrong with the server"));
+        reject(new Error("Something went wrong"));
       }
-    };
-
-    xhr.onerror = () => {
-      reject(new Error("Something went wrong with the server"));
     };
     xhr.send();
   });
@@ -133,6 +129,8 @@ async function handleGetPostsWithXmlHttpRequest() {
     "https://jsonplaceholder.typicode.com/posts"
   );
   console.log(parsedResult);
+  // console.log(parsedResult);X
 }
 
 handleGetPostsWithXmlHttpRequest();
+
